@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Contact
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+  <img class="img-fluid" src="https://source.unsplash.com/1500x500/?mobile, laptop">
+</div>
+<h1 class="text-center py-2 my-2 bg-light text-dark">Contact Us</h1>
+<div class="container my-2 border border-light">
+  <form method="POST" action="/ContactUs">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" class="form-control" name="name" placeholder="full name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" name="email" placeholder="name@example.com" required>
+    </div>
+    <div class="form-group">
+      <label for="queries">Queries</label>
+      <select class="form-control" name="queries">
+        <option>Personal Question</option>
+        <option>Site Bugs</option>
+        <option>About Books</option>
+        <option>About Our Services</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <label for="tell_us">Tell About Us</label>
+    <textarea class="form-control" name="tell_us" rows="3" required></textarea>
+    <button type="submit" class="btn btn-success my-2">Submit</button>
+    </form>
+</div>
+
+<div class="container">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+      <span class="text-muted">created by San Jog</span>
+    </div>
+  </footer>
+</div>
+{% endblock %}
